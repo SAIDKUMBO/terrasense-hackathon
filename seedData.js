@@ -19,7 +19,11 @@ const landDataSchema = new mongoose.Schema({
     organicMatter: Number,
     nutrients: { nitrogen: Number, phosphorus: Number, potassium: Number }
   },
-  vegetation: { coverage: Number, ndvi: Number, type: String },
+  vegetation: {
+    coverage: { type: Number, required: true },
+    ndvi: { type: Number, required: true },
+    type: { type: String, required: true }
+  },
   degradationLevel: String,
   erosionRisk: Number,
   timestamp: Date,
